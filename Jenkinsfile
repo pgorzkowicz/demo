@@ -14,5 +14,17 @@ pipeline {
       }
     }
 
+    stage('Checkout') {
+      steps {
+        git(url: 'https://github.com/pgorzkowicz/demo.git', branch: 'main')
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+
   }
 }
