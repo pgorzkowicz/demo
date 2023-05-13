@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        echo 'hej'
+        echo 'Hej'
       }
     }
 
-    stage('clone') {
+    stage('Clone') {
       steps {
-        git(url: 'https://github.com/pgorzkowicz/demo/', branch: 'main')
+        git(url: 'https://github.com/pgorzkowicz/demo', branch: 'main')
       }
     }
 
-    stage('build') {
+    stage('Build') {
       steps {
         sh 'mvn clean install'
       }
